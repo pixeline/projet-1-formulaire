@@ -30,7 +30,7 @@
 			    <div class="col-md-6">
 			    	<div class="form-container">
 				    	<!--Debut de formulaire - partie 1-->
-				    	<h1>Thank you for your request <?php echo $lastName; ?></h1>
+				    	<h1>Thank you for your request <?php //echo $lastName; ?></h1>
 				    	<h2>We will reply as soon as possible</h2>
 				    	<p>Your message :</p>
 						<?php //echo $message; ?>
