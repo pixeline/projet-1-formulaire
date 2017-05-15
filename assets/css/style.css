@@ -1,0 +1,200 @@
+/*-------------------------
+		LOAD FONTS
+---------------------------*/
+
+@font-face {
+	font-family: "Bellota";
+	src: url('../font/Bellota-Regular.woff');	
+}
+
+
+@font-face {
+	font-family: "Bellota";
+	src: url('../font/Bellota-Bold.woff');	
+}
+
+/* -------------------------
+	    	RESET 
+---------------------------*/
+html{
+
+	height: 100%;
+	margin : 0;
+	padding : 0;
+}
+
+body {
+
+	font-family: Bellota;
+	margin : 0;
+	padding : 0;
+	background-color: #404040;
+	height :100%;
+}
+
+
+/* -------------------------
+	    	HEADER
+---------------------------*/
+
+.logo {
+
+	width : 250px;
+	padding-top : 130px;
+	
+}
+
+/*------------------------
+			MAIN
+---------------------------*/
+
+
+h1 {
+	font-weight: normal;
+	margin: 0px;
+	padding: 0px;
+}
+
+
+h2 {
+	font-weight: normal;
+	margin: 0px;
+	padding: 0px;
+}
+
+.container {
+
+	background-color: #fff;
+	padding: 0px;
+
+}
+
+
+fieldset {
+
+	/*margin-top : 40px;*/
+}
+
+
+input[type=text], input[type=email]
+{
+	
+	height: 30px;
+	font-size: 110%;
+}
+
+button 
+{
+	width: 100%;
+	background-color: #fff;
+	color :#15c5bd;
+	height: 40px;
+	/*margin-bottom: 40px;*/
+	border : 1px solid #fff;
+	font-size: 140%;
+	font-weight: bold;
+	margin-top: 20px;
+}
+
+
+.typeradio 
+{
+	margin-top :20px;
+	margin-bottom: 10px;
+}
+
+.left-main {
+	
+	font-weight: bold;
+	text-align: center;
+	color : #303030;
+	background-color: #fff;
+	width: 100%;
+	height: 100%;
+	line-height: 5em;
+	margin:0px;
+	padding: 0px;
+
+
+}
+
+.col-md-6, .row, .main-container, .container, .container-fluid {
+	height : 100%;
+
+}
+
+
+.row{
+
+	padding : 0px;
+	margin: 0px;
+}
+
+.col-md-6 {
+	background-color: #fff;
+	margin-bottom: 0px
+	
+}
+
+fieldset{
+	margin-top: 10px;
+	margin-bottom: 0px;
+	padding: 0px;
+}
+
+.main-container {
+	margin : 0px;
+	padding: 0px;
+
+}
+
+.error {
+
+	border : 3px solid #FF0000;
+}
+
+.msgError {
+	color : #FF0000;
+}
+
+.how {
+	font-size: 200%;
+}
+
+.form-container {
+	background-color: #15c5bd; 
+	padding: 0px 20px 0px 20px;
+	margin-top: 0px;
+	color : #fff;
+	height: 100%;
+}
+
+.text {
+	margin-top :20px;
+}
+
+
+@media screen and (max-width: 750px) {
+
+	
+  	.logo 
+  	{
+  		width: 200px;
+  		margin : auto;
+  		display : block;
+  	}
+
+  	h1, h2, .heading p
+  	{
+  		text-align: center;
+  	}
+
+  	h1, h2 
+  	{
+  		font-size: 160%;
+   	}
+
+
+}
+
+
