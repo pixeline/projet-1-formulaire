@@ -36,7 +36,7 @@ if (isset($_POST['submit']))
 
 	        elseif ($result[$key] === false) //S'il n'est pas valide.
 	        { 
-	            $messageError[$key] = "Your $key not corrrect.";
+	            $messageError[$key] = "Your $key is not corrrect.";
 	            $valueError[$key] = $value; 
 	            $nbError++;
 	        }
