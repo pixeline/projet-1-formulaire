@@ -7,8 +7,7 @@ $options = array(
     'gender' 			=> FILTER_SANITIZE_STRING,
     'country' 			=> FILTER_SANITIZE_STRING,
     'subject' 			=> FILTER_SANITIZE_STRING,
-    'message' 			=> FILTER_SANITIZE_STRING,
-);
+    'message' 			=> FILTER_SANITIZE_STRING);
 
 $messageError			= array();    	
 $valueError			= array();
