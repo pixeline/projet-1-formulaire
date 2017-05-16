@@ -55,7 +55,7 @@ if (isset($_POST['submit']))
 				$nbError++;
 			}		
 
-			else // si non, on remplace les douples espaces et ont me chaques 1ere lettee de chaque en majuscule puisque nom...
+			else // si non, on remplace les douples espaces et on met chaques 1ere lettee de chaque en majuscule puisque nom...
 			{	
 				$result[$key] = str_replace("  ", " ", $result[$key]);
 				$result[$key] = ucwords(strtolower($result[$key])); 
@@ -66,7 +66,7 @@ if (isset($_POST['submit']))
 	        	if(strlen($result["message"]) <= 30) 
 	        	{
 	        		$messageError["message"] = "Your message is too short ! ";
-				   	$nbError++;
+				$nbError++;
 	        	}
 	        }
 
@@ -82,7 +82,7 @@ if (isset($_POST['submit']))
         	$send 	.=	"<p> Last Name   : " . $result["lastName"] . "</p>";
         	$send 	.=	"<p> Email 		 : " . $result["mail"] . "</p>";
         	$send 	.=	"<p> Country 	 : " . $result["country"] . "</p>";
-        	$send 	.=  "<p> Subject     : " . $result["subject"] . "</p>";
+        	$send 	.=  	"<p> Subject     : " . $result["subject"] . "</p>";
         	$send 	.= 	"<p> Message 	 : " . $result["message"] . "</p>";
 
         	mail("ludovic.paho@gmail.com", $result["subject"], $send);
