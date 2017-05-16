@@ -55,7 +55,7 @@ if (isset($_POST['submit']))
 				$nbError++;
 			}		
 
-			else // si non, on remplace les douples espaces et on met chaques 1ere lettee de chaque en majuscule puisque nom...
+			else // si non, on remplace les douples espaces et on met chaque 1ere lettre de chaque mo en majuscule puisque nom...
 			{	
 				$result[$key] = str_replace("  ", " ", $result[$key]);
 				$result[$key] = ucwords(strtolower($result[$key])); 
