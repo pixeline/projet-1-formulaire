@@ -41,7 +41,7 @@ if (isset($_POST['submit']))
 	            $nbError++;
 	        }
 
-	        elseif ($key == "name" OR $key == "lastName") // Si le prénom et nom contiennent des chiffres
+	        elseif ($key == "name" OR $key == "lastName") // Si le prénom et nom contiennent des chiffres.
 	        {
 	        	if(preg_match('#[0-9]#', $result[$key]))
 			{
@@ -61,7 +61,7 @@ if (isset($_POST['submit']))
 				$result[$key] = ucwords(strtolower($result[$key])); 
 			} 
 	        }
-	        elseif ($key =="message")// On verif si le message n'est pas trop court 
+	        elseif ($key =="message")// On verif si le message n'est pas trop court ...
 	        {
 	        	if(strlen($result["message"]) <= 30) 
 	        	{
