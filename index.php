@@ -2,15 +2,15 @@
 
 $options = array(
     'name' 			=> FILTER_SANITIZE_STRING,
-    'lastName' 		=> FILTER_SANITIZE_STRING,
+    'lastName' 			=> FILTER_SANITIZE_STRING,
     'mail' 			=> FILTER_VALIDATE_EMAIL,
-    'gender' 		=> FILTER_SANITIZE_STRING,
-    'country' 		=> FILTER_SANITIZE_STRING,
-    'subject' 		=> FILTER_SANITIZE_STRING,
-    'message' 		=> FILTER_SANITIZE_STRING,
+    'gender' 			=> FILTER_SANITIZE_STRING,
+    'country' 			=> FILTER_SANITIZE_STRING,
+    'subject' 			=> FILTER_SANITIZE_STRING,
+    'message' 			=> FILTER_SANITIZE_STRING,
 );
 
-$messageError		= array();    	
+$messageError			= array();    	
 $valueError			= array();
 $nbError 			= 0;
 
@@ -45,26 +45,25 @@ if (isset($_POST['submit']))
 	        elseif ($key == "name" OR $key == "lastName") // Si le prénom et nom contiennent des chiffres
 	        {
 	        	if(preg_match('#[0-9]#', $result[$key]))
-				{
-				   $messageError[$key] = "Numbers are not allowed in this field.";
-				   $nbError++;
-				}
+			{
+				 $messageError[$key] = "Numbers are not allowed in this field.";
+				 $nbError++;
+			}
 
-				if(preg_match('#[/!/^/&/€/$/§/?/_/*/;/:/,]#', $result[$key])) // Si un des caractères se trouve dans la chaine = error.
-				{
-				   $messageError[$key] = "For this field, only alphabetic letters are allowed";
-				   $nbError++;
-				}		
+			elseif(preg_match('#[/!/^/&/€/$/§/?/_/*/;/:/,]#', $result[$key])) // Si un des caractères se trouve dans la chaine = error.
+			{
+				$messageError[$key] = "For this field, only alphabetic letters are allowed";
+				$nbError++;
+			}		
 
-				else // si non, on remplace les douples espaces et ont me chaques 1ere lettee de chaque en majuscule puisque nom...
-				{	
-					$result[$key] = str_replace("  ", " ", $result[$key]);
-					$result[$key] = ucwords(strtolower($result[$key])); 
-				} 
+			else // si non, on remplace les douples espaces et ont me chaques 1ere lettee de chaque en majuscule puisque nom...
+			{	
+				$result[$key] = str_replace("  ", " ", $result[$key]);
+				$result[$key] = ucwords(strtolower($result[$key])); 
+			} 
 	        }
-	        elseif ($key =="message")
+	        elseif ($key =="message")// On verif si le message n'est pas trop court 
 	        {
-
 	        	if(strlen($result["message"]) <= 30) 
 	        	{
 	        		$messageError["message"] = "Your message is too short ! ";
@@ -73,12 +72,12 @@ if (isset($_POST['submit']))
 	        }
 
 
-	    }
+	   }
 
 	 
 
-	    if($nbError == 0) 
-	    {
+	if($nbError == 0) 
+	{
         	//print_r($result);
         	$send 	 = 	"<p> Name 		 : " . $result["name"] . "<p>";
         	$send 	.=	"<p> Last Name   : " . $result["lastName"] . "</p>";
@@ -100,13 +99,13 @@ if (isset($_POST['submit']))
     	}
 
 
-	}
+}
 
 
-	else
-	{
-   		 $messageError['emptyerror'] = 'You have not filled in anything.';
-	}
+else
+{
+	$messageError['emptyerror'] = 'You have not filled in anything.';
+}
 
 	
 	
@@ -142,13 +141,11 @@ if (isset($_POST['submit']))
 			    		<a href="#"> <img class="logo" src="assets/img/logo.png" alt="Logo Hackers poulette"/></a>
 			    		<p class="how">How can we help you ?</p>
 				    	<p>How can we improve your experience</p>	
-
-				    	
 						
-				    </div>
-			    </div>
-			    <div class="col-md-6">
-			    	<div class="form-container">
+				 </div>
+			 </div>
+			 <div class="col-md-6">
+			 	<div class="form-container">
 			    	<h1>Contact</h1>
 			    	<!--Debut de formulaire - partie 1-->
 
@@ -461,7 +458,10 @@ if (isset($_POST['submit']))
 
 							
 								
-								<div><label> Subject </label></div>
+								<div>
+									<label> Subject </label>
+								</div>
+								
 								<div>
 									<select id="subject" name="subject" class="form-control" >
 									<?php 
@@ -484,8 +484,13 @@ if (isset($_POST['submit']))
 									</select>  
 									
 								</div>
-								<div class="text"><label>Message *</label><span class="msgError"><?php if (isset($_POST['submit']) && isset($messageError['message'])) {echo  " ". $messageError['message']; } ?></span></div>
-								<div><textarea name="message" class='form-control <?php if (!empty($messageError["message"])){ echo "error";} ?>' rows="3" ><?php if (isset($result["message"])){ echo $result["message"];} ?></textarea></div>
+								
+								<div class="text">
+									<label>Message *</label><span class="msgError"><?php if (isset($_POST['submit']) && isset($messageError['message'])) {echo  " ". $messageError['message']; } ?></span>
+								</div>
+								<div>
+									<textarea name="message" class='form-control <?php if (!empty($messageError["message"])){ echo "error";} ?>' rows="3" ><?php if (isset($result["message"])){ echo $result["message"];} ?></textarea>
+								</div>
 		 
 							
 								<button type="submit" form="form1" value="submit" name="submit">Submit</button>	
