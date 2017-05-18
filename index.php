@@ -443,9 +443,10 @@ else
 
 								<div class="typeradio"><?php if(isset($result["gender"]) && $result["gender"] == "Female")
 											{
-												
-												echo '<input type="radio" id="genderM" name="gender" value="Male" ><label for="genderM"> Male</label>
-												<input type="radio" id="genderF" name="gender" value="Female" checked> <label for="genderF">Female </label>';																		
+											?>
+									<input type="radio" id="genderM" name="gender" value="Male" ><label for="genderM"> Male</label>
+												<input type="radio" id="genderF" name="gender" value="Female" checked> <label for="genderF">Female </label>
+									<?php
 											}
 											else 
 											{
